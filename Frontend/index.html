@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2f54eb;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #ffffff;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    main {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #2f54eb;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1d39c4;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <nav>
+    <strong>User:</strong> John Doe |
+    <strong>Status:</strong> Logged In
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Welcome Back</h2>
+      <p>Here is a summary of your recent activity.</p>
+      <ul>
+        <li>3 new messages</li>
+        <li>2 pending approvals</li>
+        <li>1 system update available</li>
+      </ul>
+      <button onclick="showAlert()">Show Alert</button>
+    </div>
+
+    <div class="card">
+      <h2>System Status</h2>
+      <p id="statusText">All systems operational.</p>
+      <button onclick="toggleStatus()">Toggle Status</button>
+    </div>
+  </main>
+
+  <script>
+    function showAlert() {
+      alert("This is a notification!");
+    }
+
+    function toggleStatus() {
+      const status = document.getElementById("statusText");
+      if (status.textContent.includes("operational")) {
+        status.textContent = "System maintenance in progress.";
+        status.style.color = "red";
+      } else {
+        status.textContent = "All systems operational.";
+        status.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html>
